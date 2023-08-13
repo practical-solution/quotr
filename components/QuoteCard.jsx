@@ -8,35 +8,33 @@ import { usePathname, useRouter } from "next/navigation";
 const QuoteCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
   const user = session?.user;
-  if (!user) {
+  /* if (!user) {
     return {
       redirect: {
         destination: "/",
         permanent: false,
       },
     };
-  }
+  } */
   const pathName = usePathname();
   const router = useRouter();
 
   const [copied, setCopied] = useState("");
-
+  
   const handleProfileClick = () => {
     console.log(post);
 
-    if (post.creator._id === session?.user.id) return router.push("/profile");
 
+
+
+    if (post.creator._id === session?.user.id) return router.push("/profile");
     router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
   };
 
-  const handleCopy = () => {
-    setCopied(post.content);
-    navigator.clipboard.writeText(post.prompt);
-    setTimeout(() => setCopied(false), 3000);
-  };
-  console.log(session.user)
+
+  
   return (
-    <div className='prompt_card'>
+    <div className='prompt_card' >
       <div className='flex justify-between items-start gap-5'>
         <div
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
@@ -94,7 +92,7 @@ const QuoteCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => {
             Delete
           </p>
         </div>
-      )} 
+      ) } 
     </div>
   );
 };
