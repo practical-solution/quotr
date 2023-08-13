@@ -10,7 +10,7 @@ const Home = () => {
         </br>
         <span className="green_gradient text-center"> Share inspiring quotes!</span>
       </h1>
-      <p className="desc text-center">quoter is a quotes marketplace
+      <p className="desc text-center">quotr is a quotes marketplace
       </p>
      <Feed />
     </section>

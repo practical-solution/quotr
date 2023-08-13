@@ -22,7 +22,7 @@ const CreatePost = () => {
 
         try {
             const response = await fetch(
-                '/api/material/new',
+                '/api/quotes/new',
                 {
                     method: 'POST',
                     body: JSON.stringify({

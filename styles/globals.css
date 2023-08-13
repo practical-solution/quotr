@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,400;10..48,600&family=Roboto:wght@300;400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
@@ -30,7 +31,7 @@
 
 .main:after {
   content: "";
-  background-image: url("/assets/images/grid.svg");
+  
   z-index: 1;
   position: absolute;
   width: 100%;
@@ -40,7 +41,7 @@
   filter: invert(1);
 }
 
-.gradient {
+/* .gradient {
   height: fit-content;
   z-index: 3;
   width: 100%;
@@ -50,12 +51,10 @@
       hsla(215, 98%, 61%, 1) 0px,
       transparent 0%
     ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, rgb(162, 253, 58) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, rgb(77, 231, 185) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, rgb(182, 228, 55) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, rgb(241, 124, 157) 0px, transparent 50%);
+    radial-gradient(at 97% 21%, rgb(219, 219, 219) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, rgb(133, 133, 133) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, rgb(201, 165, 111) 0px, transparent 50%);
+    
   position: absolute;
   content: "";
   width: 100%;
@@ -63,13 +62,39 @@
   filter: blur(100px) saturate(150%);
   top: 80px;
   opacity: 0.15;
+} */
+
+
+
+
+body {
+	background: linear-gradient(-45deg, #83a6b6, #bac5ab, #e0dad2, #a7a8a8);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	height: 100vh;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
 
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
   }
 }
+
+
 
 /* Tailwind Styles */
 
@@ -86,7 +111,7 @@
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-5xl font-satoshi leading-[1.15] text-black sm:text-6xl;
 }
 
 .orange_gradient {
@@ -148,9 +173,9 @@
   @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
 }
 
-/* PromptCard Component */
+/* QuoteCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/90 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
 
 .flex-center {

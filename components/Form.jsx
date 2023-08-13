@@ -39,7 +39,7 @@ const Form = ({
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             Tag the quote {" "}
             <span className='font-normal'>
-              (#isnpiring, #happiness, #life, etc.)
+              (#inspiring, #happiness, #life, etc.)
             </span>
           </span>
           <input
